@@ -1,0 +1,36 @@
+Project Idea: Real-time Collaborative Markdown Editor
+This project will allow multiple users to simultaneously edit a Markdown document in their web browsers, with changes reflected in real-time for all connected users. This involves concepts like:
+* Backend: Handling data storage, real-time communication logic.
+* Frontend: Displaying the editor, sending and receiving changes.
+* Real-time Communication: Using technologies like WebSockets.
+Core Requirements:
+1. User Authentication and Authorization:
+* Requirement 1.1: Users should be able to create accounts (username, email, password).
+* Requirement 1.2: Users should be able to log in and log out securely.
+* Requirement 1.3: Only logged-in users should be able to create and edit documents.
+* Requirement 1.4: Implement basic authorization:
+    * The user who creates a document is its owner.
+    * Owners should be able to optionally share documents with other logged-in users with either "view" or "edit" permissions.
+    * Users with "view" permission can only see the document content in real-time.
+    * Users with "edit" permission can make changes that are reflected for everyone.
+2. Document Management:
+* Requirement 2.1: Logged-in users should be able to create new Markdown documents.
+* Requirement 2.2: Each document should have a title.
+* Requirement 2.3: Users should be able to view a list of their own documents and documents shared with them.
+* Requirement 2.4: Users should be able to open and edit existing documents (based on their permissions).
+* Requirement 2.5: Documents should be automatically saved periodically to the database (autosave functionality).
+3. Real-time Collaborative Editing:
+* Requirement 3.1: When multiple logged-in users are viewing the same document, any changes made by one user should be reflected in near real-time on the screens of all other users viewing or editing that document.
+* Requirement 3.2: Implement basic conflict resolution (e.g., last write wins or operational transformation for more advanced handling, start with the simpler approach).
+* Requirement 3.3: Display the names or avatars of the users currently editing a document (optional, but enhances collaboration).
+4. Markdown Editing and Preview:
+* Requirement 4.1: Provide a text area for users to input and edit Markdown content.
+* Requirement 4.2: Provide a real-time preview of the rendered Markdown content alongside the editor.
+* Requirement 4.3: Support common Markdown syntax (headings, lists, bold, italics, links, code blocks).
+5. Technology Stack (Recommended for Practice):
+* Backend: Django (for the web framework, ORM, authentication).
+* Real-time Communication: Django Channels (for WebSockets integration).
+* Database: PostgreSQL (robust and commonly used with Django, but you can also use SQLite for initial development).
+* Frontend: HTML, CSS, JavaScript.
+* Markdown Rendering (Frontend): A JavaScript library like Marked.js or Showdown.js.
+
